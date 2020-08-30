@@ -17,8 +17,6 @@ async function run() {
     const createVirtualenvs = is_yes(core.getInput('create_virtualenvs'));
 
     core.info('Retrieving Poetry Installation Script...');
-    core.info(exec);
-    core.info(exec.exec);
     await exec.exec('curl -O -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py');
 
     core.info('Installing Poetry...');

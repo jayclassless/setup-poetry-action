@@ -1,13 +1,15 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: Setup Poetry
+description: Installs Poetry into a Python environment
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
-    required: true
-    default: '1000'
-outputs:
-  time: # output will be available to future steps
-    description: 'The message to output'
+  version:
+    description: The version of Poetry to install (defaults to the most recent).
+  preview:
+    description: Whether or not to install the preview version of Poetry (defaults to false).
+    default: 'false'
+  create_virtualenvs:
+    description: Whether or not Poetery should create a new virtualenv when installing your project (defaults to false).
+    default: 'false'
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: node12
+  main: dist/index.js
+

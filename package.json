@@ -1,7 +1,7 @@
 {
-  "name": "javascript-action",
+  "name": "setup-poetry-action",
   "version": "1.0.0",
-  "description": "JavaScript Action Template",
+  "description": "A Github Action to install Poetry into a Python environment",
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
@@ -9,23 +9,12 @@
     "test": "jest",
     "all": "npm run lint && npm run prepare && npm run test"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/actions/javascript-action.git"
-  },
-  "keywords": [
-    "GitHub",
-    "Actions",
-    "JavaScript"
-  ],
-  "author": "",
+  "author": "Jason Simeone",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/actions/javascript-action/issues"
-  },
-  "homepage": "https://github.com/actions/javascript-action#readme",
+  "homepage": "https://github.com/jayclassless/setup-poetry-action",
   "dependencies": {
-    "@actions/core": "^1.1.1"
+    "@actions/core": "^1.2.4",
+    "@actions/exec": "^1.0.4"
   },
   "devDependencies": {
     "@vercel/ncc": "^0.24.0",
@@ -33,3 +22,4 @@
     "jest": "^26.1.0"
   }
 }
+

@@ -23,22 +23,26 @@ async function run() {
     const preview = is_yes(core.getInput('preview'));
     const createVirtualenvs = is_yes(core.getInput('create_virtualenvs'));
 
-    core.info('Retrieving Poetry Installation Script...');
+    core.startGroup('Retrieving Poetry Installation Script');
     await exec.exec('curl -O -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py');
+    core.endGroup();
 
-    core.info('Installing Poetry...');
+    core.startGroup('Installing Poetry');
     const flags = preview ? '--preview' : version ? `--version=${version}` : '';
     await exec.exec(`python get-poetry.py --yes ${flags}`);
+    core.endGroup();
 
-    core.info('Configuring environment...');
+    core.startGroup('Configuring environment');
     core.addPath(path.join(os.homedir(), '.poetry', 'bin'));
-    core.info(`PATH SET TO: ${process.env['PATH']}`);
+    core.info(`Path set to: ${process.env['PATH']}`);
     if (!createVirtualenvs) {
       await exec.exec('poetry config virtualenvs.create false');
     }
+    core.endGroup();
 
-    core.info('Cleaning up...');
+    core.startGroup('Cleaning up...');
     fs.unlinkSync('get-poetry.py');
+    core.endGroup();
   } catch (error) {
     core.setFailed(error.message);
   }

@@ -13,7 +13,7 @@
   "license": "MIT",
   "homepage": "https://github.com/jayclassless/setup-poetry-action",
   "dependencies": {
-    "@actions/core": "^1.2.4",
+    "@actions/core": "^1.2.6",
     "@actions/exec": "^1.0.4"
   },
   "devDependencies": {

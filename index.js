@@ -26,7 +26,11 @@ async function run() {
     core.endGroup();
 
     core.startGroup('Configuring environment');
-    core.addPath(path.join(os.homedir(), '.local', 'bin'));
+    if (process.env['RUNNER_OS'] === 'Windows') {
+      core.addPath(path.join(os.homedir(), 'AppData', 'Roaming', 'Python', 'Scripts'));
+    } else {
+      core.addPath(path.join(os.homedir(), '.local', 'bin'));
+    }
     core.info(`Path set to: ${process.env['PATH']}`);
     if (!createVirtualenvs) {
       await exec.exec('poetry config virtualenvs.create false');

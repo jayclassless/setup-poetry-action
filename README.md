@@ -20,5 +20,5 @@ steps:
 
 - `version`: The version of Poetry to install (defaults to the most recent).
 - `preview`: Whether or not to install the preview version of Poetry (defaults to false).
-- `create_virtualenvs`: Whether or not Poetery should create a new virtualenv when installing your project (defaults to false).
+- `create_virtualenvs`: Whether or not Poetry should create a new virtualenv when installing your project (defaults to false).
 

@@ -2958,7 +2958,7 @@ async function run() {
 
     core.startGroup('Installing Poetry');
     const flags = preview ? '--preview' : version ? `--version=${version}` : '';
-    await exec.exec(`python get-poetry.py --yes ${flags}`);
+    await exec.exec(`python install-poetry.py --yes ${flags}`);
     core.endGroup();
 
     core.startGroup('Configuring environment');

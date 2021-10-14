@@ -2970,7 +2970,7 @@ async function run() {
     core.endGroup();
 
     core.startGroup('Cleaning up...');
-    fs.unlinkSync('get-poetry.py');
+    fs.unlinkSync('install-poetry.py');
     core.endGroup();
   } catch (error) {
     core.setFailed(error.message);

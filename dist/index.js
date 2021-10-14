@@ -2962,7 +2962,7 @@ async function run() {
     core.endGroup();
 
     core.startGroup('Configuring environment');
-    core.addPath(path.join(os.homedir(), '.poetry', 'bin'));
+    core.addPath(path.join(os.homedir(), '.local', 'bin'));
     core.info(`Path set to: ${process.env['PATH']}`);
     if (!createVirtualenvs) {
       await exec.exec('poetry config virtualenvs.create false');

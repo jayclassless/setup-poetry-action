@@ -10,6 +10,6 @@ inputs:
     description: Whether or not Poetery should create a new virtualenv when installing your project (defaults to false).
     default: 'false'
 runs:
-  using: node12
+  using: node16
   main: dist/index.js
 

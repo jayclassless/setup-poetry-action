@@ -17,7 +17,7 @@ async function run() {
     const createVirtualenvs = is_yes(core.getInput('create_virtualenvs'));
 
     core.startGroup('Retrieving Poetry Installation Script');
-    await exec.exec('curl -O -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py');
+    await exec.exec('curl -sSL -o install-poetry.py https://install.python-poetry.org');
     core.endGroup();
 
     core.startGroup('Installing Poetry');
